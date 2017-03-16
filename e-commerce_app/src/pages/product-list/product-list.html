@@ -1,0 +1,23 @@
+<!--
+  Generated template for the ProductList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Listagem de produtos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let product of products" (click)="goToProductDetail(product)">
+      <h2>{{ product.name }}</h2>
+      <p>R$ {{ product.value }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
