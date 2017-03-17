@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        \PagSeguroLibrary::init();
+        \PagSeguroConfig::init();
+        \PagSeguroResources::init();
     }
 }

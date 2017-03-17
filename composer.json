@@ -9,7 +9,9 @@
         "barryvdh/laravel-cors": "^0.8.6",
         "kris/laravel-form-builder": "^1.11",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "pagseguro/php": "2.7.1",
+        "tymon/jwt-auth": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

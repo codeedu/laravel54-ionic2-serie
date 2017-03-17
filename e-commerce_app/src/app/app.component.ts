@@ -4,8 +4,9 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
-import {ProductListPage} from "../pages/product-list/product-list";
-
+import {LoginPage} from "../pages/login/login";
+import {ProductListPage} from "../pages/product-list/product-list"
+import {MyCartPage} from "../pages/my-cart/my-cart";
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +14,7 @@ import {ProductListPage} from "../pages/product-list/product-list";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ProductListPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,7 +25,8 @@ export class MyApp {
     this.pages = [
       { title: 'Page One', component: Page1 },
       { title: 'Page Two', component: Page2 },
-      { title: 'Produtos', component: Page2 }
+      { title: 'Produtos', component: ProductListPage },
+      { title: 'Meu carrinho', component: MyCartPage },
     ];
 
   }

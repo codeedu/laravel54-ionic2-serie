@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['middleware' => 'cors'], function (){
-    Route::get('products', 'Api\ProductsController@index');
-    Route::get('products/{product}', 'Api\ProductsController@show');
+    Route::post('login', 'Api\AuthenticateController@authenticate');
+    Route::group(['middleware' => 'jwt.auth'], function(){
+        Route::get('session', 'Api\PagSeguroController@getSessionId');
+        Route::post('order', 'Api\PagSeguroController@order');
+        Route::get('products', 'Api\ProductsController@index');
+        Route::get('products/{product}', 'Api\ProductsController@show');
+    });
 });

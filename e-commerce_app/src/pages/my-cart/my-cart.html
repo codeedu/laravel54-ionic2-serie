@@ -1,5 +1,5 @@
 <!--
-  Generated template for the ProductList page.
+  Generated template for the MyCart page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Listagem de produtos</ion-title>
+    <ion-title>Meu carrinho - R$ {{cart.total}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,9 +18,9 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let product of products" (click)="goToProductDetail(product)">
-      <h2>{{ product.name }}</h2>
-      <p>R$ {{ product.value }}</p>
+    <ion-item *ngFor="let o of cart.items">
+      {{o.name}} - R$ {{o.value}}
     </ion-item>
   </ion-list>
+  <button ion-button (click)="goToCheckout()">Finalizar compra</button>
 </ion-content>
